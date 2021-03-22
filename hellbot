@@ -4,10 +4,10 @@
 _get_repolink () {
     local regex
     regex='(https?)://github.com/.+/.+'
-    if [[ $HELL_REPO == "HellBot" ]]
+    if [[ $HELL_REPO == "DeathnoteBot" ]]
     then
         echo "aHR0cHM6Ly9naXRodWIuY29tL1RoZVZhZGVycy9WYWRlci9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
-    elif [[ $HELL_REPO == "Hellbot" ]]
+    elif [[ $HELL_REPO == "Deathnotebot" ]]
     then
         echo "aHR0cHM6Ly9naXRodWIuY29tL1RoZVZhZGVycy9WYWRlci9hcmNoaXZlL21hc3Rlci56aXA=" | base64 -d
     elif [[ $HELL_REPO =~ $regex ]]
@@ -26,7 +26,7 @@ _get_repolink () {
 
 _set_bot () {
     local zippath
-    zippath="hellbot.zip"
+    zippath="deathnote.zip"
     echo "  Downloading source code ..."
     wget -q $(_get_repolink) -O "$zippath"
     echo "  Unpacking Data ..."
@@ -37,14 +37,9 @@ _set_bot () {
     rm -rf "$zippath"
     sleep 5
     cd $HELLPATH
-    echo "    Starting HellBot    "
+    echo "    Starting DeathnoteBot    "
     echo "
-                              ╔╗─╔╗──╔╗╔╗╔╗────╔╗
-                              ║║─║║──║║║║║║───╔╝╚╗
-                              ║╚═╝╠══╣║║║║╚═╦═╩╗╔╝
-                              ║╔═╗║║═╣║║║║╔╗║╔╗║║
-                              ║║─║║║═╣╚╣╚╣╚╝║╚╝║╚╗
-                              ╚╝─╚╩══╩═╩═╩══╩══╩═╝
+                              DEATHNOTE USERBOT
     "
 
     python3 ../setup/updater.py ../requirements.txt requirements.txt
