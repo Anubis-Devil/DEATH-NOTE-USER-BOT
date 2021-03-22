@@ -1,7 +1,7 @@
 FROM sandy1709/catuserbot:alpine
 
 #clonning repo 
-RUN git clone https://github.com/king-cobra-user/DEATH-NOTE-USER-BOT
+RUN git clone https://github.com/Anubis-devil/DEATH-NOTE-USER-BOT
 #working directory 
 WORKDIR /root/userbot
 
